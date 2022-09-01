@@ -199,5 +199,14 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function actionGenerateLink($id)
+    {
+        $article = $this->findModel($id);
+        $article -> link = 'blog/site/view?id='.$id;
+        $article->save();
+        return $this->redirect(['view', 'id'=>$article->id]);
+
+    }
+
 
 }
