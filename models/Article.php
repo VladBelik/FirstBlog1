@@ -14,6 +14,8 @@ use yii\helpers\ArrayHelper;
  * @property string|null $description
  * @property string|null $content
  * @property string|null $date
+ * @property string|null $DateCreation
+* @property string|null $DateChange
  * @property string|null $image
  * @property string|null $link
  * @property int|null $viewed
@@ -42,8 +44,8 @@ class Article extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['title','description','content'], 'string'],
-            [['date'], 'date', 'format'=>'php:Y-m-d'],
-            [['date'], 'default', 'value' => date('Y-m-d')],
+            [['date','DateCreation','DateChange'], 'date', 'format'=>'php:Y-m-d'],
+            [['date','DateCreation','DateChange'], 'default', 'value' => date('Y-m-d')],
             [['title'], 'string', 'max' => 255],
             [['category_id'], 'number']
         ];

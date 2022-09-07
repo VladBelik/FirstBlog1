@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'description:ntext',
             'content:ntext',
             'date',
+
             [
                 'format' => 'html',
                 'label' => 'Image',
@@ -41,6 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
 
             ],
+            'DateCreation',
+            'DateChange',
             //'image',
             //'link',
             //'viewed',

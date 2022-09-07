@@ -99,7 +99,10 @@ class ArticleController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post( ))) {
+
+            $model-> DateChange = date('Y-m-d') ;
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
