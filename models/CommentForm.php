@@ -13,7 +13,9 @@ class CommentForm extends Model
     {
         return [
             [['comment'], 'required'],
-            [['comment'], 'string', 'length' => [3,250]]
+            [['comment'], 'string', 'length' => [3,250]],
+
+
         ];
     }
 
@@ -25,6 +27,14 @@ class CommentForm extends Model
         $comment->article_id = $article_id;
         $comment->status = 0;
         $comment->date = date('Y-m-d');
+
+        Yii::$app->mailer->compose()
+            ->setTo('vladbelik99@yandex.ru')
+            ->setFrom('vladbelik99@yandex.ru')
+            ->setSubject('Comment form blog')
+            ->setTextBody($this->comment)
+            ->send();
+
         return $comment->save();
 
     }

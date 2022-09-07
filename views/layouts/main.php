@@ -57,6 +57,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     <ul class="nav navbar-nav text-uppercase">
                         <li><a href="login">Login</a></li>
                         <li><a href="signup">Register</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="about">About</a></li>
                     </ul>
                 </div>
 

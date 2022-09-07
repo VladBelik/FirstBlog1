@@ -27,10 +27,21 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
-            'class' => \yii\symfonymailer\Mailer::class,
+            'class' => 'yii\swiftmailer\Mailer',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.yandex.ru',
+                'username' => 'vladbelik99@yandex.ru',
+                'password' => '**********',
+                'port' => 465,
+                'encryption' => 'ssl',
+                //'dsn' => 'native://default',
+
+            ],
             'viewPath' => '@app/mail',
-            // send all mails to a file by default.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
+
+
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
